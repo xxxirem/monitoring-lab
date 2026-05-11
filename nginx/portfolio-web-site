@@ -1,0 +1,15 @@
+server {
+    listen 80;
+    server_name 192.168.116.138;
+    root /var/www/portfolio-web-site;
+
+    index index.html me.html portfolio.html;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+    location /metrics {
+        stub_status on;
+        allow all;         # Для теста разрешаем всем. Позже можно ограничить IP экспортера
+    }
+}

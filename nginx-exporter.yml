@@ -1,0 +1,7 @@
+nginx-exporter:
+    image: nginx/nginx-prometheus-exporter:latest
+    container_name: nginx-exporter
+    command:
+      - -nginx.scrape-uri=http://192.168.116.138/metrics
+    ports:
+      - "9113:9113"
